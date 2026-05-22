@@ -1,0 +1,127 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "Stores student profile information and preferences.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "rollNo": { "type": "string" },
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "email": { "type": "string" },
+        "mobile": { "type": "string" },
+        "program": { "type": "string" },
+        "branch": { "type": "string" },
+        "batch": { "type": "string" },
+        "designation": { "type": "string" },
+        "profilePic": { "type": "string" }
+      },
+      "required": ["uid", "rollNo", "email", "designation"]
+    },
+    "timetables": {
+      "title": "Timetable",
+      "description": "Weekly schedule for a specific branch and batch.",
+      "type": "object",
+      "properties": {
+        "branch": { "type": "string" },
+        "batch": { "type": "string" },
+        "schedule": { "type": "object" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "activities": {
+      "title": "Academic/Non-Academic Activity",
+      "description": "Events, quizzes, assignments, or club activities.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "branch": { "type": "string" },
+        "type": { "type": "string", "enum": ["academic", "non-academic"] },
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "description": { "type": "string" },
+        "createdBy": { "type": "string" },
+        "isGlobal": { "type": "boolean" }
+      }
+    },
+    "resources": {
+      "title": "Learning Resource",
+      "description": "Study materials or links shared by CR/DCR.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "branch": { "type": "string" },
+        "title": { "type": "string" },
+        "link": { "type": "string" },
+        "type": { "type": "string" },
+        "createdBy": { "type": "string" }
+      }
+    },
+    "results": {
+      "title": "Semester Result",
+      "description": "Grades for a student in a specific semester.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "semester": { "type": "number" },
+        "sgpa": { "type": "number" },
+        "grades": { "type": "array" }
+      }
+    },
+    "achievements": {
+      "title": "Student Achievement",
+      "description": "Award or milestone reached by a student.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "description": { "type": "string" },
+        "type": { "type": "string" },
+        "fileLink": { "type": "string" }
+      }
+    },
+    "goals": {
+      "title": "Personalized Goal",
+      "description": "To-do item for an individual student.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "title": { "type": "string" },
+        "completed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "users",
+      "description": "Collection of user profiles."
+    },
+    "timetables": {
+      "schema": "timetables",
+      "description": "Timetable configurations per branch/batch."
+    },
+    "activities": {
+      "schema": "activities",
+      "description": "Collection of academic and non-academic activities."
+    },
+    "resources": {
+      "schema": "resources",
+      "description": "Shared learning resources."
+    },
+    "results": {
+      "schema": "results",
+      "description": "Student semester grades (restricted access)."
+    },
+    "achievements": {
+      "schema": "achievements",
+      "description": "Individual student achievements."
+    },
+    "goals": {
+      "schema": "goals",
+      "description": "Personal to-do lists for students."
+    }
+  }
+}

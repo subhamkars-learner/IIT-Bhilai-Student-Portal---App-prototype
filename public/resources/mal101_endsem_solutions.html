@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAL101: Mathematics-II End-Sem Solutions - IIT Bhilai</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .math-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen selection:bg-indigo-500/30 selection:text-white">
+
+  <!-- Floating Navigation / Header -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center font-black text-orange-400 text-sm">
+          MA
+        </div>
+        <div>
+          <h1 class="text-sm font-black tracking-tight uppercase">IIT Bhilai Library</h1>
+          <p class="text-[10px] text-slate-400 font-mono tracking-wider">MAL101: MATHEMATICS-II — PYQ SOLUTIONS</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-lg shadow-indigo-600/20 active:scale-95 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    
+    <!-- Title Card -->
+    <div class="bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl mb-12 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-full text-[10px] font-black text-orange-400 uppercase tracking-widest">End-Semester Solutions</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tighter mt-4 mb-3 leading-none">Mathematics-II (MAL101)</h2>
+      <p class="text-slate-400 text-sm sm:text-base max-w-2xl font-medium">Official Exam Solutions, Hints & Marking Scheme. Formatted cleanly with step-by-step mathematical proofs, eigenvalue derivations, and differential equations.</p>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pt-8 border-t border-slate-800/60 text-xs font-mono">
+        <div>
+          <span class="text-slate-500 block mb-1">DEPARTMENT</span>
+          <span class="text-slate-200 font-bold">Mathematics</span>
+        </div>
+        <div>
+          <span class="text-slate-500 block mb-1">INSTITUTION</span>
+          <span class="text-slate-200 font-bold">IIT Bhilai</span>
+        </div>
+        <div>
+          <span class="text-slate-500 block mb-1">STATUS</span>
+          <span class="text-indigo-400 font-bold">Verified Permanent</span>
+        </div>
+        <div>
+          <span class="text-slate-500 block mb-1">ACADEMIC YEAR</span>
+          <span class="text-slate-200 font-bold">Core Syllabus Reference</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Index Links -->
+    <div class="mb-10 no-print">
+      <h3 class="text-xs uppercase tracking-wider font-extrabold text-slate-500 mb-4">Quick Jump to Question</h3>
+      <div class="flex flex-wrap gap-2">
+        <a href="#q1" class="px-4 py-2 bg-slate-950 border border-slate-800/80 hover:border-indigo-500/40 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all">Q1: Diagonalization & Eigenvalues</a>
+        <a href="#q2" class="px-4 py-2 bg-slate-950 border border-slate-800/80 hover:border-indigo-500/40 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all">Q2: Gram-Schmidt Process</a>
+        <a href="#q3" class="px-4 py-2 bg-slate-950 border border-slate-800/80 hover:border-indigo-500/40 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all">Q3: Orthogonal Spaces Proofs</a>
+        <a href="#q4" class="px-4 py-2 bg-slate-950 border border-slate-800/80 hover:border-indigo-500/40 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all">Q4: Adjoint Operators</a>
+        <a href="#q5" class="px-4 py-2 bg-slate-950 border border-slate-800/80 hover:border-indigo-500/40 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all">Q5: Picard's Uniqueness Theorem</a>
+        <a href="#q6" class="px-4 py-2 bg-slate-950 border border-slate-800/80 hover:border-indigo-500/40 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all">Q6 & Q7: Differential Equations</a>
+        <a href="#q9" class="px-4 py-2 bg-slate-950 border border-slate-800/80 hover:border-indigo-500/40 rounded-xl text-xs font-semibold text-slate-300 hover:text-white transition-all">Q9 & Q10: Laplace Transforms</a>
+      </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="space-y-12">
+      
+      <!-- QUESTION 1 -->
+      <section id="q1" class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl relative">
+        <span class="absolute top-6 right-6 text-xs font-mono text-emerald-500 font-extrabold px-3 py-1 bg-emerald-500/5 border border-emerald-500/10 rounded-full uppercase">3 Marks Total</span>
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">1</span>
+          Eigenvalues & Diagonalization
+        </h3>
+        
+        <div class="bg-indigo-500/5 border border-indigo-500/10 p-5 rounded-2xl mb-6">
+          <p class="text-slate-300 text-sm leading-relaxed font-medium">
+            Let <strong class="math-font text-white">A = [[4, 8, -2], [-3, -6, 1], [9, 12, -5]]</strong>.<br>
+            (a) Find the eigenvalues of A.<br>
+            (b) Determine whether A is diagonalizable.<br>
+            (c) If A is diagonalizable, find an invertible matrix P and a diagonal matrix D such that A = PDP<sup>-1</sup>.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-xs uppercase tracking-wider font-extrabold text-indigo-400 mb-2 font-mono">Solution Hint (a): Eigenvalue Derivation</h4>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 leading-relaxed">
+              det(A - λI) = 0<br><br>
+              | 4-λ    8      -2  |<br>
+              | -3   -6-λ      1  | = 0<br>
+              |  9    12    -5-λ  |<br><br>
+              Expanding the characteristic equation yields:<br>
+              -λ³ - 7λ² - 16λ - 12 = 0  ⇒  -(λ + 2)²(λ + 3) = 0<br><br>
+              Hence, eigenvalues are <span class="text-emerald-400 font-bold">λ = -2, -2, -3</span>. <span class="bg-rose-500/10 font-bold border border-rose-500/20 text-rose-400 px-1.5 py-0.5 rounded text-[10px] uppercase ml-2">1 Mark</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs uppercase tracking-wider font-extrabold text-indigo-400 mb-2 font-mono">Solution Hint (b): Eigenvectors Investigation</h4>
+            <p class="text-slate-300 text-sm leading-relaxed mb-3">
+              For repeated eigenvalue <strong class="math-font text-white">λ = -2</strong>, compute null space of <strong class="math-font text-white">A + 2I</strong>:
+            </p>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 mb-3">
+              A + 2I = [[6, 8, -2], [-3, -4, 1], [9, 12, -3]]<br>
+              Performing Row Reduction (R2 → R2 + 0.5 R1, R3 → R3 - 1.5 R1) yields:<br>
+              [[6, 8, -2], [0, 0, 0], [0, 0, 0]]<br><br>
+              From 6x + 8y - 2z = 0  ⇒  3x + 4y - z = 0<br>
+              Eigenvectors can be written as:<br>
+              v₁ = (1, 0, 3)ᵀ, v₂ = (0, 1, 4)ᵀ. <span class="bg-rose-500/10 font-bold border border-rose-500/20 text-rose-400 px-1.5 py-0.5 rounded text-[10px] uppercase ml-2">1 Mark</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-3">
+              For eigenvalue <strong class="math-font text-white">λ = -3</strong>, compute null space of <strong class="math-font text-white">A + 3I</strong>:
+            </p>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300">
+              A + 3I = [[7, 8, -2], [-3, -3, 1], [9, 12, -2]]<br>
+              Row reduced echelon: [[1, 2, 0], [0, 3, 1], [0, 0, 0]]<br>
+              Implies x + 2y = 0 and 3y + z = 0.<br>
+              For y=1, eigenvector is v₃ = (2, -1, 3)ᵀ. <span class="bg-rose-500/10 font-bold border border-rose-500/20 text-rose-400 px-1.5 py-0.5 rounded text-[10px] uppercase ml-2">1 Mark</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs uppercase tracking-wider font-extrabold text-indigo-400 mb-2 font-mono">Solution Hint (c): Diagonalization Matrices</h4>
+            <p class="text-slate-300 text-sm leading-relaxed mb-3">
+              Since we found three linearly independent eigenvectors, A is diagonalizable:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
+              <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4">
+                <span class="text-slate-400 font-bold">P (Modal Matrix):</span><br>
+                [[ 2,  1,  0 ],<br>
+                [-1,  0,  1 ],<br>
+                [ 3,  3,  4 ]]  <span class="text-rose-400 font-extrabold ml-2">[0.5 Mark]</span>
+              </div>
+              <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4">
+                <span class="text-slate-400 font-bold">D (Diagonal Matrix):</span><br>
+                [[-3,  0,  0 ],<br>
+                [ 0, -2,  0 ],<br>
+                [ 0,  0, -2 ]]  <span class="text-rose-400 font-extrabold ml-2">[0.5 Mark]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUESTION 2 -->
+      <section id="q2" class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl relative">
+        <span class="absolute top-6 right-6 text-xs font-mono text-emerald-500 font-extrabold px-3 py-1 bg-emerald-500/5 border border-emerald-500/10 rounded-full uppercase">2.5 Marks Total</span>
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">2</span>
+          Gram-Schmidt Process & Projections
+        </h3>
+
+        <div class="bg-indigo-500/5 border border-indigo-500/10 p-5 rounded-2xl mb-6">
+          <p class="text-slate-300 text-sm leading-relaxed font-medium">
+            (a) Let <strong class="math-font text-white">V = P₂([R])</strong> with the inner product <strong class="math-font text-white">&lt;f, g&gt; = ∫₋₁¹ f(x)g(x) dx</strong>. Find an orthonormal basis of V.<br>
+            (b) Let <strong class="math-font text-white">P₃([R])</strong> with the same inner product. Compute the orthogonal projection of <strong class="math-font text-white">f(x) = x³</strong> on V.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-xs uppercase tracking-wider font-extrabold text-indigo-400 mb-2 font-mono">Solution Process (a) - Gram-Schmidt</h4>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-3 leading-relaxed">
+              <div>
+                <strong>Step 1: Basis Vector 1 (u₁ = 1)</strong><br>
+                ||u₁||² = ∫₋₁¹ 1 dx = 2  ⇒  ||u₁|| = √2.<br>
+                e₁ = u₁/||u₁|| = <span class="text-emerald-400 font-bold">1/v2</span>. <span class="text-rose-400 font-extrabold">[0.5 Mark]</span>
+              </div>
+              <hr class="border-slate-800 my-2">
+              <div>
+                <strong>Step 2: Basis Vector 2 (u₂ = x - &lt;x, e₁&gt;e₁)</strong><br>
+                &lt;x, e₁&gt; = (1/√2) ∫₋₁¹ x dx = 0.<br>
+                Hence, u₂ = x. ||u₂||² = ∫₋₁¹ x² dx = 2/3.<br>
+                e₂ = u₂/||u₂|| = <span class="text-emerald-400 font-bold">v(3/2) x</span>. <span class="text-rose-400 font-extrabold">[0.5 Mark]</span>
+              </div>
+              <hr class="border-slate-800 my-2">
+              <div>
+                <strong>Step 3: Basis Vector 3 (u₃)</strong><br>
+                u₃ = x² - &lt;x², e₁&gt;e₁ - &lt;x², e₂&gt;e₂<br>
+                &lt;x², e₁&gt; = 1/√2 * 2/3 = (√2)/3.<br>
+                &lt;x², e₂&gt; = 0 (integrates odd function x³).<br>
+                u₃ = x² - (√2/3)*(1/√2) = x² - 1/3.<br>
+                ||u₃||² = ∫₋₁¹ (x² - 1/3)² dx = 8/45.<br>
+                e₃ = <span class="text-emerald-400 font-bold">v(45/8) * (x² - 1/3)</span>.<br><br>
+                Orthonormal basis: <span class="text-emerald-400 font-bold">{ 1/v2,  v(3/2)x,  v(45/8)(x² - 1/3) }</span>. <span class="text-rose-400 font-extrabold">[1 Mark]</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs uppercase tracking-wider font-extrabold text-indigo-400 mb-2 font-mono">Solution Process (b) - Orthogonal Projection</h4>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 leading-relaxed">
+              proj_V(f) = &Sigma; &lt;f, e_i&gt; e_i<br><br>
+              &lt;x³, e₁&gt; = (1/√2) ∫₋₁¹ x³ dx = 0<br>
+              &lt;x³, e₂&gt; = √(3/2) ∫₋₁¹ x⁴ dx = √(3/2) * (2/5)<br>
+              &lt;x³, e₃&gt; = 0 (odd integrand)<br><br>
+              Resulting projection term:<br>
+              proj_V(x³) = &lt;x³, e₂&gt;e₂ = [√(3/2)*(2/5)] * [√(3/2) x] = <span class="text-emerald-400 font-bold font-black text-sm">3/5 x</span>. <span class="text-rose-400 font-extrabold">[1 Mark]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUESTION 4 & 5 -->
+      <section id="q4" class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl relative">
+        <span class="absolute top-6 right-6 text-xs font-mono text-emerald-500 font-extrabold px-3 py-1 bg-emerald-500/5 border border-emerald-500/10 rounded-full uppercase">3.5 Marks Total</span>
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">3</span>
+          Linear Adjoints & Uniqueness Theorems
+        </h3>
+
+        <div class="space-y-6">
+          <div class="bg-indigo-500/5 border border-indigo-500/10 p-5 rounded-2xl">
+            <p class="text-slate-300 text-sm leading-relaxed font-bold">
+              Let T be linear operator on [R]³ defined as T(x,y,z) = (-x+y, 5y, 4x-2y+5z). Find T*, and check self-adjointness.
+            </p>
+          </div>
+          
+          <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 leading-relaxed">
+            Standard matrix formulation of T:<br>
+            A = [[ -1,   1,   0 ],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[  0,   5,   0 ],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[  4,  -2,   5 ]]  <span class="text-rose-400 font-bold">[1 Mark]</span><br><br>
+            Matrix of T* is transpose Aᵀ:<br>
+            Aᵀ = [[ -1,   0,   4 ],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[  1,   5,  -2 ],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[  0,   0,   5 ]]  <span class="text-rose-400 font-bold">[1 Mark]</span><br><br>
+            Hence, adjoint operator formula is:<br>
+            <span class="text-emerald-400 font-bold font-bold">T*(x,y,z) = (-x + 4z,  x + 5y - 2z,  5z)</span>  <span class="text-rose-400 font-bold">[0.5 Mark]</span><br><br>
+            To test self-adjointness: since A &ne; Aᵀ, <span class="text-rose-400 font-bold font-black">T is not self-adjoint</span>. <span class="text-rose-400 font-bold">[0.5 Mark]</span>
+          </div>
+
+          <div class="border-t border-slate-800/60 pt-6">
+            <div class="bg-indigo-500/5 border border-indigo-500/10 p-5 rounded-2xl mb-3">
+              <span class="text-indigo-400 uppercase font-black tracking-widest text-[10px] block mb-1">Picard's Uniqueness Proof</span>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Show whether dy/dx = &radic;y + 1, y(0)=0 has a unique solution on 0 &le; x,y &le; 1.
+              </p>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              We check the ratio for Lipschitz continuity in the second variable:
+            </p>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 mt-2 leading-relaxed">
+              |f(x, y₁) - f(x, y₂)| / |y₁ - y₂| = |√y₁ - √y₂| / |y₁ - y₂| = 1 / (√y₁ + √y₂)<br><br>
+              This ratio is <span class="text-rose-400 font-bold font-black uppercase">unbounded</span> as y₁, y₂ approach 0. Therefore, f is not Lipschitz continuous around 0, and uniqueness cannot be concluded from standard Picard's existence theorem. <span class="text-emerald-400 font-bold">[2 Marks]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXAMPLES & REST FORMULAS -->
+      <section id="q9" class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl relative">
+        <span class="absolute top-6 right-6 text-xs font-mono text-emerald-500 font-extrabold px-3 py-1 bg-emerald-500/5 border border-emerald-500/10 rounded-full uppercase">3 Marks Total</span>
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">4</span>
+          Laplace Transforms & ODEs
+        </h3>
+
+        <div class="space-y-6">
+          <div>
+            <span class="px-2 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 rounded font-mono text-[10px] uppercase">Inverse Laplace</span>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Find the Inverse Laplace of <strong class="math-font text-white">F(s) = (s + 10) / (s² + 8s + 20)</strong>.
+            </p>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 mt-2 leading-relaxed">
+              s² + 8s + 20 = (s + 4)² + 4<br>
+              F(s) = [s + 4] / [(s+4)² + 4] + 6 / [(s+4)² + 4]<br><br>
+              Inverse transform using standard shift theorem results:<br>
+              L⁻¹{ (s+a) / ((s+a)² + b²) } = e⁻ᵃᵗ cos bt<br>
+              L⁻¹{ b / ((s+a)² + b²) } = e⁻ᵃᵗ sin bt<br><br>
+              Hence: <span class="text-emerald-400 font-bold text-sm font-black">f(t) = e⁻⁴ᵗ (cos 2t + 3 sin 2t)</span>. <span class="text-rose-400 font-bold">[1 Mark]</span>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-800/60 pt-6">
+            <span class="px-2 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 rounded font-mono text-[10px] uppercase">Laplace ODE Solution</span>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Solve the second-order IVP: <strong class="math-font text-white">y'' + 7y' + 10y = 4t e⁻³ᵗ</strong>, given <strong class="math-font text-white">y(0)=0</strong>, <strong class="math-font text-white">y'(0)=-1</strong>.
+            </p>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-slate-300 mt-2 leading-relaxed">
+              Taking Laplace transforms:<br>
+              (s²Y - sy(0) - y'(0)) + 7(sY - y(0)) + 10Y = 4 / (s+3)²<br>
+              Substitute initial conditions:<br>
+              (s²Y + 1) + 7sY + 10Y = 4 / (s+3)²<br>
+              Y(s) [s² + 7s + 10] = [4 / (s+3)²] - 1  ⇒  s² + 7s + 10 = (s+5)(s+2)<br><br>
+              Taking partial fractions and computing inverse Laplace:<br>
+              Resulting solution:<br>
+              <span class="text-emerald-400 font-bold text-sm font-black">y(t) = e⁻²ᵗ - (1 + 2t)e⁻³ᵗ</span>. <span class="text-rose-400 font-bold">[1 Mark]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Thank you Notice / Footer banner in PDF -->
+    <div class="mt-16 text-center border-t border-slate-800/60 pt-8">
+      <p class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">IIT BHILAI — MATH STUDY GROUP — VERIFIED INTERNAL NOTES</p>
+    </div>
+
+  </main>
+
+</body>
+</html>

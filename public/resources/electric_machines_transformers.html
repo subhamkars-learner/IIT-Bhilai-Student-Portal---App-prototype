@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Machines and Transformers Reference Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .math-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen selection:bg-indigo-500/30 selection:text-white">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center font-black text-indigo-400 text-sm">
+          EE
+        </div>
+        <div>
+          <h1 class="text-sm font-black tracking-tight uppercase">IIT Bhilai Library</h1>
+          <p class="text-[10px] text-slate-400 font-mono tracking-wider">ELECTRICAL ENGINEERING REFERENCE SLIDES & GUIDE</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-lg shadow-indigo-600/20 active:scale-95 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    
+    <!-- Title Card -->
+    <div class="bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl mb-12 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-[10px] font-black text-indigo-400 uppercase tracking-widest">Permanent Courseware Reference</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tighter mt-4 mb-3 leading-none">Electric Machines & Transformers</h2>
+      <p class="text-slate-400 text-sm sm:text-base max-w-2xl font-medium">Core Magnetic Circuits, Ampere's Law, Flux Density, B-H curves, Core Losses (Hysteresis & Eddy), and Complete Transformer Modelling.</p>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pt-8 border-t border-slate-800/60 text-xs font-mono">
+        <div>
+          <span class="text-slate-500 block mb-1">RECOMMENDED BOOKS</span>
+          <span class="text-slate-200 font-bold block">Nagrath & Kothari</span>
+          <span class="text-slate-200 font-bold block">Fitzgerald & Kingslay</span>
+          <span class="text-slate-200 font-bold block">P.S. Bhimbra</span>
+        </div>
+        <div>
+          <span class="text-slate-500 block mb-1">COURSE VALUE</span>
+          <span class="text-slate-200 font-bold">Standard Syllabus Core</span>
+        </div>
+        <div>
+          <span class="text-slate-500 block mb-1">STATUS</span>
+          <span class="text-emerald-400 font-bold">Verified Permanent</span>
+        </div>
+        <div>
+          <span class="text-slate-500 block mb-1">ACADEMIC CORE</span>
+          <span class="text-slate-200 font-bold">IIT Bhilai EE Core</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Syllabus Sections of Slides -->
+    <div class="space-y-12">
+      
+      <!-- SLIDE 1: Ampere's Law & MMF -->
+      <section class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl">
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">1</span>
+          Ampere's Law & Magneto Motive Force (MMF)
+        </h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          <strong>Ampere's Law</strong> states that where there is an electric current, there will be an associated magnetic field. The closed line integral of magnetic field intensity <strong class="math-font text-white">H</strong> equals the total current enclosed by that path:
+        </p>
+        <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 font-mono text-center text-sm text-indigo-300 my-4">
+          &int; H &middot; dl = &Sigma; Currents Enclosed = N &middot; I
+        </div>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          The product <strong class="math-font text-white">NI</strong> is known as the <strong class="text-white">Magneto Motive Force (MMF)</strong>, which acts as the excitation parameter of a magnetic circuit. Its SI unit is the <strong class="text-white">Ampere-Turn (A-T)</strong>.
+        </p>
+      </section>
+
+      <!-- SLIDE 2: B-H Relation & Flux density -->
+      <section class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl">
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">2</span>
+          Magnetic Flux Density & Permeability
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 leading-relaxed text-sm">
+          <div>
+            <p class="text-slate-300">
+              When a magnetic field intensity <strong class="math-font text-white">H</strong> is established inside a core material, it amplifies the magnetic field to establish <strong class="text-white">Magnetic Flux Density (B)</strong>, measured in <strong class="text-white">Tesla (T)</strong>:
+            </p>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-indigo-300 my-3 text-center">
+              B = &mu; &middot; H
+            </div>
+            <p class="text-slate-400 text-xs">
+              Where <strong class="math-font text-slate-300">&mu; = &mu;₀&mu;ᵣ</strong>.<br>
+              &mu;₀ (Permeability of free space) = 4&pi; &times; 10⁻⁷ H/m.<br>
+              &mu;ᵣ is the relative permeability of our iron core.
+            </p>
+          </div>
+          <div>
+            <p class="text-slate-300 font-medium">Total Flux Calculation:</p>
+            <p class="text-slate-400 mt-2">
+              Flux is given by the product of flux density (B) and cross-sectional area (A):
+            </p>
+            <div class="bg-slate-900 border border-slate-800/80 rounded-xl p-4 font-mono text-xs text-indigo-300 my-3 text-center">
+              &phi; = B &middot; A &nbsp;(Weber, Wb)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: Analogies between Circuits -->
+      <section class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl">
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">3</span>
+          Magnetic vs. Electric Circuits (Analogous Model)
+        </h3>
+        
+        <div class="overflow-x-auto rounded-2xl border border-slate-800">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-slate-900 font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800">
+                <th class="p-4">Magnetic Circuit Parameters</th>
+                <th class="p-4 border-l border-slate-800">Electrical Circuit Parameters</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 font-mono text-slate-300">
+              <tr>
+                <td class="p-4">MMF (NI) [Cause]</td>
+                <td class="p-4 border-l border-slate-800">EMF (Voltage) [Cause]</td>
+              </tr>
+              <tr>
+                <td class="p-4">Flux (&phi;) [Effect]</td>
+                <td class="p-4 border-l border-slate-800">Current (I) [Effect]</td>
+              </tr>
+              <tr>
+                <td class="p-4">Flux density (B)</td>
+                <td class="p-4 border-l border-slate-800">Current density (J)</td>
+              </tr>
+              <tr>
+                <td class="p-4">Reluctance (Rg = L / (&mu;₀&mu;ᵣA))</td>
+                <td class="p-4 border-l border-slate-800">Resistance (R = &rho;L / A)</td>
+              </tr>
+              <tr>
+                <td class="p-4">Permeability (&mu;₀&mu;ᵣ)</td>
+                <td class="p-4 border-l border-slate-800">Conductivity (&sigma; = 1/&rho;)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Air Gaps & Series Reluctance -->
+      <section class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl">
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">4</span>
+          Air Gaps Integration
+        </h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          When an air gap of length <strong class="math-font text-white">g</strong> is introduced into the iron core path length <strong class="math-font text-white">l</strong>, it introduces a very high reluctance in series with that of iron:
+        </p>
+        <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 font-mono text-sm text-indigo-300 text-center mb-4 leading-relaxed">
+          &phi; = MMF / (R_iron + R_air)<br><br>
+          R_iron = l / (&mu;₀ &mu;ᵣ A), &nbsp;&nbsp;&nbsp; R_air = g / (&mu;₀ A)
+        </div>
+      </section>
+
+      <!-- SLIDE 5: AC Core Loss -->
+      <section class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl">
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">5</span>
+          AC Core Loss Formulation
+        </h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          Under AC excitation, real power is lost inside the magnetic core. This core loss is comprised of two distinct physical phenomena:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs font-mono">
+          <div class="bg-slate-900 border border-slate-800/80 p-5 rounded-2xl">
+            <span class="text-orange-400 font-bold text-sm block mb-2">1. Hysteresis Loss</span>
+            <p class="text-slate-400 my-1">
+              Caused by molecular friction during reversals of magnetic domains. The power loss is given by Steinmetz formulation:
+            </p>
+            <div class="text-indigo-300 text-base font-bold my-2 py-1 select-none">
+              P_h = k_h &middot; f &middot; B_m^n
+            </div>
+            <p class="text-[10px] text-slate-500">where 'n' (Steinmetz exponent) typically ranges from 1.5 to 2.5.</p>
+          </div>
+          <div class="bg-slate-900 border border-slate-800/80 p-5 rounded-2xl">
+            <span class="text-indigo-400 font-bold text-sm block mb-2">2. Eddy Current Loss</span>
+            <p class="text-slate-400 my-1">
+              Caused by circulating electric loops induced inside the conducting magnet core. Proportional to frequency squared:
+            </p>
+            <div class="text-indigo-300 text-base font-bold my-2 py-1 select-none">
+              P_e = k_e &middot; f² &middot; B_m²
+            </div>
+            <p class="text-[10px] text-slate-500">Low reluctance/powdered cores and thin structural laminations keep Eddy loop losses minimal.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Transformer Equivalent Circuit -->
+      <section class="slate-card p-6 sm:p-8 bg-slate-950 border border-slate-800 rounded-3xl">
+        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800/60 pb-3 flex items-center gap-2">
+          <span class="w-7 h-7 bg-indigo-500/15 text-indigo-400 rounded-lg flex items-center justify-center font-bold text-sm">6</span>
+          Equivalent Circuit of a Transformer
+        </h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          The transformer equivalent circuit models electrical winding parameters on both sides, combined with parallel magnetizing shunt branch components (Rc and Lm):
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+          <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl">
+            <span class="text-white block font-bold mb-1">R₁ & X₁ (Primary)</span>
+            <span class="text-slate-400">Primary copper windings series resistance and leakage reactance.</span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl">
+            <span class="text-white block font-bold mb-1">R₂' & X₂' (Reflected Secondary)</span>
+            <span class="text-slate-400">Secondary winding series resistance and leakage reactance, scaled by squared turns ratios: (N1/N2)².</span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl">
+            <span class="text-white block font-bold mb-1">Shunt Branch (Rc & Lm)</span>
+            <span class="text-slate-400">No-load parameters. Rc is core loss resistance equivalent. Lm is core magnetizing inductance.</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer link block -->
+    <div class="mt-16 text-center border-t border-slate-800/60 pt-8">
+      <p class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">IIT BHILAI — ELECTRICAL MACHINES ARCHIVE NOTES</p>
+    </div>
+
+  </main>
+
+</body>
+</html>
